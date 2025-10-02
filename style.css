@@ -1,0 +1,707 @@
+/* --- Global Reset & Typography --- */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Latar belakang terang */
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #004d99; /* Warna utama biru SDN */
+    margin-top: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+/* --- Layout Dasar --- */
+.header-content,
+main,
+.footer-grid,
+.hero-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header & Navigasi --- */
+.main-header {
+    background-color: #004d99; /* Biru tua, warna utama header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.2em;
+}
+
+.logo img {
+    height: 50px; /* Ukuran logo */
+    margin-right: 15px;
+}
+
+.logo h1 {
+    color: white;
+    font-size: 1.6em;
+    margin: 0;
+}
+
+/* Navigasi Utama */
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Menu horizontal */
+}
+
+.main-nav li {
+    position: relative;
+}
+
+.main-nav a {
+    color: white;
+    padding: 15px 18px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.main-nav a:hover {
+    background-color: #003366;
+}
+
+/* --- Hero Section --- */
+/* --- Hero Section --- */
+.hero-section {
+    /* 1. Mengatur background dengan gradien (overlay gelap) dan gambar */
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+        url('bg\ sdn\ sm.jpg') center/cover no-repeat;
+    
+    /* 2. Properti untuk mengatur tampilan gambar */
+    background-size: cover; /* Penting: Memastikan gambar menutupi seluruh area section */
+    background-position: center; /* Memastikan gambar terpusat */
+    background-repeat: no-repeat; /* Mencegah gambar berulang */
+    
+    color: white; /* Pastikan teks di atas gambar tetap terbaca */
+    text-align: center;
+    padding: 100px 20px;
+    margin-top: 0;
+}
+
+.hero-section h2 {
+    /* Pastikan teks judul tetap putih agar kontras dengan background */
+    color: white; 
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+/* Sisa styling hero section lainnya... */
+
+
+/* --- Konten Section (Umum) --- */
+section {
+    padding: 60px 20px;
+    margin-bottom: 20px;
+}
+
+/* Statistik Sekolah */
+.stats-section {
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.stat-item {
+    flex-basis: 25%;
+}
+
+.stat-item .number {
+    font-size: 3em;
+    font-weight: bold;
+    color: #dc3545; /* Warna kontras */
+}
+
+/* Berita */
+.news-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+}
+
+.news-list {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.news-item {
+    flex-basis: 45%;
+    text-align: left;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.news-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-item h3, .news-item p {
+    padding: 0 15px;
+}
+
+/* CATATAN: Styling untuk .program-section dan .ppdb-section DITIADAKAN */
+
+/* --- Footer --- */
+.main-footer {
+    background-color: #212529; /* Warna hitam gelap */
+    color: white;
+    padding: 40px 0 10px;
+}
+
+.footer-grid {
+    display: grid;
+    /* MENGATUR HANYA DUA KOLOM DENGAN MINIMUM LEBAR 300px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    padding-bottom: 30px;
+}
+
+.footer-grid h4 {
+    color: #ffc107;
+    margin-bottom: 15px;
+}
+
+.footer-grid ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-grid a {
+    color: #ccc;
+    display: block;
+    margin-bottom: 8px;
+    transition: color 0.3s;
+}
+
+.footer-grid a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    font-size: 0.9em;
+}
+
+/* --- Mobile Responsiveness (Hamburguer Menu) --- */
+
+/* Tombol Menu (sembunyikan di desktop) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8em;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+@media (max-width: 992px) {
+    /* Sembunyikan Navigasi di Mobile/Tablet */
+    .main-nav {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Sesuaikan dengan tinggi header */
+        left: 0;
+        background-color: #004d99;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+    }
+
+    /* Tampilkan tombol menu */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Tampilkan menu saat JS menambahkan kelas 'open' */
+    .main-nav.open {
+        display: block;
+    }
+
+    /* Menu di mobile ditampilkan vertikal */
+    .main-nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main-nav li a {
+        padding: 15px 0;
+        border-bottom: 1px solid #003366;
+    }
+
+    /* Tata Letak Konten Mobile */
+    .stats-grid, .news-list {
+        flex-direction: column;
+    }
+    
+    .news-item {
+        flex-basis: 100%;
+    }
+}
+/* --- Styling Halaman Berita (berita.html) --- */
+
+/* Header Halaman Khusus */
+.page-header {
+    background-color: #e9ecef; /* Latar belakang abu-abu terang */
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #004d99;
+}
+
+.page-header h2 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+/* Grid Artikel Berita */
+.news-archive {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.article-grid {
+    display: grid;
+    /* Mengatur dua kolom di desktop */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+    gap: 30px;
+}
+
+/* Item Berita (Didesain ulang agar lebih menonjol) */
+.news-item.full-width-item {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    background-color: white;
+    transition: transform 0.3s;
+}
+
+.news-item.full-width-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.news-item img {
+    width: 40%; /* Gambar mengambil 40% lebar */
+    height: auto;
+    object-fit: cover;
+}
+
+.news-content {
+    width: 60%; /* Konten mengambil 60% lebar */
+    padding: 20px;
+}
+
+.news-date {
+    display: block;
+    font-size: 0.85em;
+    color: #6c757d;
+    margin-bottom: 5px;
+}
+
+.news-content h3 {
+    font-size: 1.3em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.news-content p {
+    font-size: 0.95em;
+    color: #555;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 15px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+
+/* Media Query untuk Responsif Mobile */
+@media (max-width: 768px) {
+    .article-grid {
+        grid-template-columns: 1fr; /* Satu kolom di mobile */
+        gap: 20px;
+    }
+    
+    .news-item.full-width-item {
+        flex-direction: column; /* Ubah tata letak menjadi vertikal */
+    }
+    
+    .news-item img {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .news-content {
+        width: 100%;
+        padding: 15px;
+    }
+}
+/* --- Styling Halaman Kontak (kontak.html) --- */
+
+/* Header halaman khusus (sama seperti berita.html) */
+.page-header {
+    background-color: #e9ecef; 
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #004d99;
+}
+
+.page-header h2 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+.contact-section {
+    padding-top: 20px;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.info-details, .map-location {
+    flex: 1; /* Agar kedua kolom memiliki lebar yang sama */
+}
+
+/* Styling Detail Kontak */
+.info-details h3 {
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-item .icon {
+    font-size: 1.5em;
+    color: #004d99;
+    margin-right: 15px;
+    width: 30px; /* Lebar tetap untuk ikon */
+}
+
+.contact-item p {
+    margin: 0;
+    color: #555;
+}
+
+/* Styling Peta */
+.map-location iframe {
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling Media Sosial */
+.social-link {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: white !important;
+    margin-right: 10px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.social-link.facebook {
+    background-color: #3b5998;
+}
+
+.social-link.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+/* Media Query untuk Responsif Mobile */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Ubah tata letak menjadi vertikal di mobile */
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .map-location {
+        margin-top: 20px;
+    }
+}
+/* --- Styling Halaman Galeri (galeri.html) --- */
+
+.gallery-section {
+    padding-top: 20px;
+    padding-bottom: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-category-title {
+    color: #004d99;
+    font-size: 1.8em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    border-left: 5px solid #ffc107; /* Garis pemisah kuning */
+}
+
+.gallery-grid {
+    display: grid;
+    /* Membuat 4 kolom dengan ukuran yang sama */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 15px;
+    padding: 0 20px; /* Jaga padding agar tidak terlalu pinggir */
+}
+
+.gallery-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* Tinggi gambar yang seragam */
+    object-fit: cover; /* Memastikan gambar memenuhi area tanpa merenggang */
+}
+
+.caption {
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Media Query untuk Responsif Mobile */
+@media (max-width: 768px) {
+    .gallery-grid {
+        /* Mengubah menjadi 2 kolom di tablet/mobile yang lebih besar */
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    .gallery-category-title {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        /* Mengubah menjadi 1 kolom di mobile yang sangat kecil */
+        grid-template-columns: 1fr; 
+    }
+}
+/* --- Styling Halaman Profil Guru (guru.html) --- */
+
+.teacher-section {
+    /* Padding di bagian atas dan bawah section */
+    padding-top: 20px;
+    padding-bottom: 80px;
+    /* Lebar maksimum section agar tetap rapi di layar lebar */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.teacher-grid {
+    display: grid;
+    /* Membuat grid 3 kolom di desktop. minmax memastikan ukuran kolom responsif */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; /* Jarak antar kartu */
+    padding: 0 20px; 
+}
+
+.teacher-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden; /* Penting agar gambar tidak keluar dari border-radius */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s; /* Efek halus saat di hover */
+}
+
+.teacher-card:hover {
+    transform: translateY(-8px); /* Menggeser kartu sedikit ke atas saat disentuh kursor */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.teacher-card img {
+    width: 100%;
+    height: 300px; /* Tinggi gambar yang seragam */
+    object-fit: cover;
+    /* Fokuskan gambar ke bagian atas (wajah) */
+    object-position: top; 
+}
+
+.teacher-info {
+    padding: 20px 15px;
+}
+
+.teacher-info h3 {
+    font-size: 1.4em;
+    color: #004d99;
+    margin-bottom: 5px;
+}
+
+.teacher-info .role {
+    font-weight: bold;
+    color: #dc3545; /* Warna kontras untuk jabatan */
+    margin-bottom: 8px;
+    display: block;
+}
+
+.teacher-info .subject {
+    font-size: 0.95em;
+    color: #555;
+    font-style: italic;
+}
+
+/* --- Media Query (Responsif) --- */
+@media (max-width: 768px) {
+    .teacher-grid {
+        /* Mengubah menjadi 2 kolom di tablet */
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 576px) {
+    .teacher-grid {
+        /* Mengubah menjadi 1 kolom di mobile penuh */
+        grid-template-columns: 1fr; 
+    }
+    
+    .teacher-card img {
+        height: 250px; /* Kurangi tinggi gambar di mobile */
+    }
+}
+/* --- Styling Halaman Detail Artikel (Contoh: artikel-1.html) --- */
+
+.article-detail-section {
+    padding: 40px 0 80px;
+    background-color: #f8f9fa;
+}
+
+.article-container {
+    max-width: 900px; /* Lebar maksimum konten artikel (agar mudah dibaca) */
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    padding: 40px;
+}
+
+.article-title {
+    font-size: 2.2em;
+    color: #004d99;
+    margin-bottom: 10px;
+}
+
+.article-meta {
+    font-size: 0.9em;
+    color: #6c757d;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.main-image {
+    margin: 25px 0;
+    text-align: center;
+}
+
+.main-image img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.main-image figcaption {
+    font-size: 0.85em;
+    color: #888;
+    margin-top: 10px;
+}
+
+.article-content {
+    font-size: 1.05em;
+    line-height: 1.8;
+    color: #333;
+}
+
+.article-content h3 {
+    color: #dc3545;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    border-left: 4px solid #ffc107;
+    padding-left: 10px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 40px;
+    font-weight: bold;
+    color: #007bff;
+}
